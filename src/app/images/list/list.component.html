@@ -1,0 +1,22 @@
+<mat-progress-spinner mode="indeterminate" class="spinner" *ngIf="!photos"></mat-progress-spinner>
+
+<div class="row"
+     *ngIf="photos">
+  <div class="col-md-4 col-lg-3" *ngFor="let item of photos">
+
+    <a *ngIf="item.id"
+      class="preview grid-item"
+      id="{{item.id}}"
+      title="View photo by {{item.user.username}}">
+      <div class="likes"><img src="../../assets/img/likes.png" alt="Likes"/> {{item.likes}}</div>
+      <img src="{{item.urls.small}}" class="thumb" alt="Photo by {{item.user.username}}"/>
+      <div class="country" *ngIf="item.location">{{item.location.country}}</div>
+    </a>
+
+
+
+
+  </div>
+</div>
+
+<div class="text-center" *ngIf="noMoreItems">No more items to display.</div>
