@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+@import 'assets/sass/variables';
+
+body, html {
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Montserrat';
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 30% auto;
+
+  a {
+      color: white;
+  }
+}
+
+section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+body {
+  color: $text-color;
+}
+.spinner {
+  margin: 50px auto;
+}
+
+img {
+  &.loading {
+    visibility: hidden;
+    height: 0;
+  }
+  &.loaded {
+    visibility: visible;
+    height: auto;
+  }
+}
+
+a {
+  color: $text-color;
+  &:hover, &:focus {
+    color: $indigo;
+    text-decoration: none;
+    outline: none;
+  }
+}

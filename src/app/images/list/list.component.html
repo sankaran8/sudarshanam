@@ -1,3 +1,65 @@
+<div class="example-container">
+  <mat-form-field *ngIf="photos">
+    <mat-select placeholder="Sort by" (change)="sort($event)" [formControl]="selection">
+      <mat-option value="popularity" aria-selected="true">popularity</mat-option>
+      <mat-option value="latest">latest</mat-option>
+      <mat-option value="oldest">oldest</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<mat-progress-spinner mode="indeterminate" class="spinner" *ngIf="!photos"></mat-progress-spinner>
+
+<div class="grid-container"
+    *ngIf="photos"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    (scrolled)="onScroll()">
+    <h1 class="mat-h1">Images</h1>
+    <mat-grid-list cols="5" >
+      <mat-grid-tile *ngFor="let photo of photos " [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+
+          <img mat-card-image class="img-article" src={{photo.urls.small}} alt="">
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+<div class="text-center" *ngIf="noMoreItems">No more items to display.</div>
+<div class="text-center">Powered by https://unsplash.com/</div>
+
+  <!--<mat-form-field *ngIf="photos">
+  <mat-select placeholder="Sort by" (change)="sort()" [formControl]="selection">
+    <mat-option value="latest" aria-selected="true">latest</mat-option>
+    <mat-option value="oldest">oldest</mat-option>
+    <mat-option value="popular">popularity</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class="row"
+     *ngIf="photos"
+     infiniteScroll
+     [infiniteScrollDistance]="1"
+     (scrolled)="onScroll()">
+  <div class="col-md-4 col-lg-3" *ngFor="let item of photos">
+
+    <a *ngIf="item.id"
+      class="preview grid-item"
+      id="{{item.id}}"
+      title="View photo by {{item.user.username}}">
+      <div class="likes"><img src="../../assets/img/likes.png" alt="Likes"/> {{item.likes}}</div>
+      <img src="{{item.urls.small}}" class="thumb" alt="Photo by {{item.user.username}}"/>
+      <div class="country" *ngIf="item.location">{{item.location.country}}</div>
+    </a>
+
+  </div>
+</div>
+
+<div class="text-center" *ngIf="noMoreItems">No more items to display.</div>
+-->
+
+<!--
 <mat-progress-spinner mode="indeterminate" class="spinner" *ngIf="!photos"></mat-progress-spinner>
 
 <div class="row"
@@ -19,4 +81,8 @@
   </div>
 </div>
 
+
 <div class="text-center" *ngIf="noMoreItems">No more items to display.</div>
+
+
+-->

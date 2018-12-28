@@ -1,0 +1,56 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/mixins';
+@import '../../thumbnail/thumbnail.component';
+
+.special-row {
+  max-width: 100%;
+}
+
+.more {
+  display: block;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: $indigo;
+  &:hover {
+    background-color: darken($indigo, 10%);
+  }
+}
+
+.example-container{
+
+  color: $indigo;
+}
+
+mat-select-placeholder {
+  display: inline;
+  color: red;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  overflow: hidden;
+  height: auto;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

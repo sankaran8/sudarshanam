@@ -1,0 +1,9 @@
+<a *ngIf="photoDetails"
+   class="preview grid-item"
+   id="{{photoDetails.id}}"
+   title="View photo by {{photoDetails.user.username}}"
+   (click)="openModal()">
+  <div class="likes"><img src="../../assets/img/likes.png" alt="Likes"/> {{photoDetails.likes}}</div>
+  <img src="{{photoDetails.urls.small}}" class="thumb" alt="Photo by {{photoDetails.user.username}}"/>
+  <div class="country" *ngIf="photoDetails.location">{{photoDetails.location.country}}</div>
+</a>

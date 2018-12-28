@@ -9,11 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class ImagesService {
 
-  private api: any;
-
   private api_access_key: string = '2b0de277f8f56271b0a3361bae68d63d2bf5f42583e4a10aa7a7ce4bc39b79bc';
-
-  private api_secret_key: string = '0537b468246ba98abaa5c92bf173e8ca73f9835b9214231bdd95cefa7b8352c5';
 
   public api_url: string = 'https://api.unsplash.com/';
 

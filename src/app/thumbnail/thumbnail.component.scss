@@ -1,0 +1,52 @@
+@import '../../assets/sass/variables';
+@import '../../assets/sass/mixins';
+
+$imageHeight: '200px';
+
+.preview {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  .likes, .country {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, .6);
+    padding: 5px 20px;
+    @include transition-duration(200ms);
+  }
+
+  .likes {
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  .country {
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  &:hover {
+    .likes, .country {
+      transform: translateY(0);
+    }
+  }
+}
+
+.grid-item {
+  width: 100%;
+  height: #{$imageHeight};
+  margin-bottom: 20px;
+  @include transition-duration(200ms);
+  &:hover {
+    @include scale(1.06);
+    cursor: pointer;
+  }
+}
+
+.thumb {
+  height: #{$imageHeight};
+  width: 100%;
+  object-fit: cover;
+}
